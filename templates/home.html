@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Precog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('{{ url_for('static', filename = 'images/twitter.jpg') }}');
+    min-height: 100%;
+}
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename = 'images/logo.png') }}" style = "max-width: 100px; margin-top: -10px;">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">HOME</a></li>
+        <li><a href="/homeSmog">ANALYSIS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PRECOG: <span class="w3-hide-small">TASK - A</span></span>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">PROBLEM STATEMENT</h3>
+  <p>Task A requires you to analyse the data collected from Twitter from a text point of view. We would like you to collect data via the Twitter API using hashtags relevant to the discussion around Air Pollution in Delhi/NCR and Mumbai Rains. You can collect data using hashtags that are trending on Twitter, such as #Smog, #MyRightToBreathe, #CropBurning, #MumbaiRains, #CycloneOckhi etc. You need to perform analysis on the tweets that you shall collect. We expect you to curate at least 20,000 (10,000 for each issue) tweets and store them in a MongoDB collection.</p>
+
+<p>From the tweets that you curate, we would like you to make a Web Application to perform a comparative analysis. You must perform the following at the very least and we expect you to showcase more insightful analysis on the data collected:</p>
+<ul>
+<li>Create a network graph of the users involved in the discussion showing how users interact(retweet, mention, reply) with each other on this topic. You can use D3.js or other relevant</li>
+<li>Locations of the Tweet (Use any geo-plotting library of your choice. A few to name are Google Charts, CartoDB)</li>
+<li>Evaluate the activity of non Delhi people who are discussing the issue of pollution and that of non Mumbai people are discussing the issue of rains.</li>
+<li>List of Top 10 Hashtags being used in the stream</li>
+<li>Distribution of Original Tweets vs Retweeted Tweets</li>
+<li>Distribution of favorite counts on Original Tweets</li>
+<li>Distribution of Type of Tweet i.e. Text, Image, Text+Image</li>
+</ul>
+
+<p>CLICK ON ANALYSIS IN THE NAVBAR TO PROCEED</p>
+</div>
+
+
+</body>
+</html>
